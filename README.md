@@ -4,7 +4,7 @@ MyPdfSlideShow - a device local PDF viewer
 
 based on [PDF.js](https://mozilla.github.io/pdf.js/).
 
-# capability
+## capability
 
 It shows a device local PDF file as presentation style.
 
@@ -13,18 +13,18 @@ It shows a device local PDF file as presentation style.
 - ✅to move between pages, use short cut keys (Unix "less" command style is supported currently)
 - ✅direct jump to the specified page is supported.
 
-# how to use
+## how to use
 
-## commands
+### commands
 
-### menu
+#### menu
 press "."(period) key to show / hide menu.
 
 ![MENU](./doc/menu.png)
 
 ## run
 
-### on web 
+### on web
 
 1. access [the demo site on github.io](https://hrkt.github.io/my-pdf-slideshow/)
 
@@ -37,9 +37,11 @@ press "."(period) key to show / hide menu.
 
 This app is tested manually on my device.
 
-- Windows10 21H1 + Firefox 95.0.2
-- Windows10 21H1 + 97.0.4692.71
-
+|OS|Browser|Display Settings|
+|:---|:---|:---|
+|Windows10 21H1|Firefox 95.0.2|100%, 125%|
+|Windows10 21H1|Chrome 97.0.4692.71|100%, 125%)|
+|macOS 12.0.1 (Monterey)|Safari 15.1|normal, expand space|
 
 ## LICENSE
 
