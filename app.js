@@ -354,7 +354,7 @@ function handleGenericShortCut (evt) {
  */
 function handleLessStyleShortCut (evt) {
   const key = evt.keyCode || evt.charCode || 0
-  console.log(key, evt.metaKey, evt.keyCode, evt.charCode)
+  debug(key, evt.metaKey, evt.keyCode, evt.charCode)
   switch (evt.code) {
     case 'KeyB': {
       evt.preventDefault()
