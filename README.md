@@ -33,6 +33,13 @@ press "."(period) key to show / hide menu.
 1. download this repository
 2. open index.html using web server such as VSCode [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), [Web Servrer for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb).
 
+## Test
+
+This app is tested manually on my device.
+
+- Windows10 21H1 + Firefox 95.0.2
+- Windows10 21H1 + 97.0.4692.71
+
 
 ## LICENSE
 
