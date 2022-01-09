@@ -13,6 +13,10 @@ It shows a device local PDF file as presentation style.
 - ✅to move between pages, use short cut keys (Unix "less" command style is supported currently)
 - ✅direct jump to the specified page is supported.
 
+## notice
+
+- On Windows, you may have to restart your browser after changing your display scaling settings so as PDF to be rendered as you might expect.
+
 ## how to use
 
 ### commands
