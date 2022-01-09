@@ -8,7 +8,7 @@ based on [PDF.js](https://mozilla.github.io/pdf.js/).
 
 It shows a device local PDF file as presentation style.
 
-- ✅open a PDF file in your device. (load from the internet is not supported currently)
+- ✅open a PDF file __in your device__ locally. (load from the internet is not supported currently)
 - ✅render "only" PDF page. no controller on the page.
 - ✅to move between pages, use short cut keys (Unix "less" command style is supported currently)
 - ✅direct jump to the specified page is supported.
@@ -26,7 +26,7 @@ press "."(period) key to show / hide menu.
 
 ### on web 
 
-1. access [TBD](https://)
+1. access [the demo site on github.io](https://hrkt.github.io/my-pdf-slideshow/)
 
 ### on your device
 
