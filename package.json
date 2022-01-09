@@ -1,0 +1,25 @@
+{
+  "name": "my-pdf-slideshow",
+  "version": "0.1.0",
+  "description": "MyPdfSlideShow - a device local PDF viewer",
+  "main": "src/index.html",
+  "scripts": {
+    "lint": "npx eslint app.js",
+    "lint-fix": "npx eslint --fix app.js"
+  },
+  "keywords": [
+    "pdf",
+    "slideshow",
+    "presentation",
+    "lodal"
+  ],
+  "author": "Hiroki Ito",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3"
+  }
+}
