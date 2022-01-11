@@ -12,6 +12,7 @@ It shows a device local PDF file as presentation style.
 - ✅render "only" PDF page. no controller on the page.
 - ✅to move between pages, use short cut keys (Unix "less" command style is supported currently)
 - ✅direct jump to the specified page is supported.
+- ✅open links in a new tab. (default to 'mypdfslideshow' window. with Ctrl-key pressed it opens '_blank' window.)
 
 ## notice
 
