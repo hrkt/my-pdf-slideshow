@@ -551,5 +551,12 @@ window.onload = init()
 
 // enable service worker
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./service-worker.js')
+  navigator.serviceWorker.register('./service-worker.js', { updateViaCache: 'none', scope: './' })
+    .then((reg) => {
+      // registration worked
+      console.log('Registration succeeded. Scope is ' + reg.scope)
+    }).catch((error) => {
+      // registration failed
+      console.log('Registration failed with ' + error)
+    })
 }
