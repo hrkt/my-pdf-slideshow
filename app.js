@@ -5,6 +5,8 @@
 
 'use strict'
 
+import { enableWebcam, disableWebcam } from './webcam.js'
+
 // Loaded via <script> tag, create shortcut to access PDF.js exports.
 const pdfjsLib = window['pdfjs-dist/build/pdf']
 
@@ -20,6 +22,7 @@ const canvas = document.getElementById('the-canvas')
 const ctx = canvas.getContext('2d')
 
 // other variables
+const useServiceWorker = false
 
 // @type {LinkArea} links in current rendered page
 // updated by render(), used in handleCanvasClickEvent
@@ -126,11 +129,13 @@ function renderPage (num) {
   // Using promise to fetch the page
   pdfDoc.getPage(num).then(function (page) {
     // treat scaling
-
     debug('window.devicePixelRatio' + window.devicePixelRatio)
 
-    const desiredWidth = document.documentElement.clientWidth
-    const desiredHeight = document.documentElement.clientHeight
+    // render to bigger canvas, and scales it to half size in css
+    // see: app.css
+    // transform: translate(-50%, -50%) scale(0.5, 0.5);
+    const desiredWidth = document.documentElement.clientWidth * 2.0
+    const desiredHeight = document.documentElement.clientHeight * 2.0
     debug('desiredWidth: ' + desiredWidth + ' desiredHeight: ' + desiredHeight)
 
     const viewport = page.getViewport({ scale: 1 })
@@ -464,6 +469,33 @@ function handleLessStyleShortCut (evt) {
 }
 
 /**
+ * handles "Experimental" short cuts
+ *
+ * @param {*} evt
+ * @returns true if event is handled in this function, otherwise false
+ */
+function handleExperimentalShortCut (evt) {
+  const key = evt.keyCode || evt.charCode || 0
+  debug(key, evt.metaKey, evt.keyCode, evt.charCode)
+  switch (evt.code) {
+    case 'IntlYen': {
+      evt.preventDefault()
+      if (evt.shiftKey) {
+        enableWebcam()
+      } else {
+        disableWebcam()
+      }
+      break
+    }
+    default: {
+      // do nothing
+      return false
+    }
+  }
+  return true
+}
+
+/**
  * set up handlers for resize event
  */
 function setupResizeEventHandlers () {
@@ -530,7 +562,9 @@ function init () {
     'keydown',
     (evt) => {
       if (!handleGenericShortCut(evt)) {
-        handleLessStyleShortCut(evt)
+        if (!handleLessStyleShortCut(evt)) {
+          handleExperimentalShortCut(evt)
+        }
       }
     },
     false
@@ -547,10 +581,12 @@ function init () {
 }
 
 // call init() when DOM is ready
-window.onload = init()
+window.onload = () => {
+  init()
+}
 
 // enable service worker
-if ('serviceWorker' in navigator) {
+if (useServiceWorker && 'serviceWorker' in navigator) {
   navigator.serviceWorker.register('./service-worker.js', { updateViaCache: 'none', scope: './' })
     .then((reg) => {
       // registration worked

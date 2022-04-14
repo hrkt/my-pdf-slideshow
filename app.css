@@ -3,7 +3,7 @@
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.5, 0.5);
 }
 
 #page-navigator {
@@ -26,4 +26,13 @@
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+}
+
+#webcam-output {
+    visibility: hidden;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 3px black;
 }
