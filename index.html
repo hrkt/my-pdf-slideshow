@@ -78,6 +78,14 @@
             <td>.</td>
             <td>toggle show/hide this menu</td>
           </tr>
+          <tr>
+            <td>(Experimental) Shift - \</td>
+            <td>enable webcam overlay</td>
+          </tr>
+          <tr>
+            <td>(Experimental) \</td>
+            <td>disable webcam overlay</td>
+          </tr>
         </tbody>
       </table>
       <hr>
@@ -105,6 +113,7 @@
     </div>
 
     <canvas id="the-canvas"></canvas>
-    <script src="./app.js"></script>
+    <video id="webcam-output">This area displays the webcam image when it is allowed to use.</video>
+    <script src="./app.js" type="module"></script>
   </body>
 </html>
